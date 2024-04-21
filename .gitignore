@@ -1,0 +1,16 @@
+# NFS
+*.nfs*
+
+# Modelsim
+*.mti
+*.wlf
+*.vstf
+*work/
+*transcript
+
+# VS Code 
+*.vscode
+*venv/
+
+# VIM
+*.swp 
