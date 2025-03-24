@@ -1,3 +1,6 @@
+//------------------------------------------------------------------------------
+// CLASS: gcd_env
+//------------------------------------------------------------------------------
 class gcd_env extends uvm_env;
   `uvm_component_utils(gcd_env)
 
@@ -10,8 +13,9 @@ class gcd_env extends uvm_env;
   lc_output_agent_t lc_out_rx_agent;
   
   gcd_predictor predictor; 
-
   gcd_sb sb; 
+
+  gcd_coverage_collector cov; 
 
   // new - constructor
   function new(string name, uvm_component parent);
@@ -39,6 +43,10 @@ class gcd_env extends uvm_env;
       sb = gcd_sb::type_id::create("sb", this);
     end 
 
+    if(env_cfg.has_coverage) begin
+      cov = gcd_coverage_collector::type_id::create("cov", this);
+    end 
+
   endfunction: build_phase
 
   // connect_phase
@@ -50,6 +58,11 @@ class gcd_env extends uvm_env;
     if(env_cfg.has_scoreboard) begin 
       predictor.expected_gcd_out_ap.connect(sb.expected_gcd_out_af.analysis_export);
       lc_out_rx_agent.ap.connect(sb.acutal_gcd_out_af.analysis_export);
+    end 
+
+    if(env_cfg.has_coverage) begin 
+      lc_in_tx_agent.ap.connect(cov.analysis_export_in);
+      lc_out_rx_agent.ap.connect(cov.analysis_export_out);
     end 
 
   endfunction: connect_phase

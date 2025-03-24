@@ -1,7 +1,7 @@
 class gcd_test extends gcd_test_base;
   `uvm_component_utils(gcd_test)
 
-  int num_of_interations = 100;
+  int num_of_interations = 1000;
 
   function new(string name = "gcd_test",uvm_component parent=null);
     super.new(name,parent);

@@ -7,7 +7,6 @@ class lc_driver #(parameter D_WIDTH=32) extends uvm_driver #(lc_sequence_item #(
   typedef virtual lc_if #(D_WIDTH) lc_if_t;
   typedef lc_cfg #(D_WIDTH) lc_cfg_t;
 
-  // Virtual Interface
   lc_if_t vif;
   lc_cfg_t cfg; 
 

@@ -48,6 +48,10 @@ class gcd_predictor extends uvm_component;
     lc_sequence_input_item_t actual_item;
     lc_sequence_output_item_t expected_item;
 
+    longint input_a;
+    longint input_b;
+    longint output_gcd; 
+
     forever begin
 
       actual_item = lc_sequence_input_item_t::type_id::create("actual_item");
@@ -55,9 +59,16 @@ class gcd_predictor extends uvm_component;
 
       acutal_ab_in_af.get(actual_item);
 
-      GCD(.a(actual_item.data[INPUT_DATA_WIDTH-1:DATA_WIDTH]), 
-          .b(actual_item.data[DATA_WIDTH-1:0]), 
-          .gcd(expected_item.data));
+      input_a = actual_item.data[INPUT_DATA_WIDTH-1:DATA_WIDTH];
+      input_b = actual_item.data[DATA_WIDTH-1:0];
+      
+      GCD(.a(input_a), 
+          .b(input_b), 
+          .gcd(output_gcd));
+
+      expected_item.data = output_gcd;
+
+      `uvm_info(get_type_name(), $sformatf ("Input: %0d, %0d | GCD: %0d", input_a, input_b, output_gcd), UVM_NONE);
 
       expected_gcd_out_ap.write(expected_item);
 

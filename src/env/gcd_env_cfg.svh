@@ -16,6 +16,7 @@ class gcd_env_cfg extends uvm_object;
   lc_in_if_t lc_in_vif;
   lc_out_if_t lc_out_vif;
 
+  bit has_coverage = 0;
   bit has_scoreboard = 1;
 
   // constructor

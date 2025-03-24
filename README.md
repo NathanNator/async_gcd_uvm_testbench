@@ -1,4 +1,4 @@
-# Asynchronous GCD Calculator - UVM Environment
+# Asynchronous GCD UVM Environment
 
 ## Introduction
 

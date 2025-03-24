@@ -15,6 +15,7 @@ class gcd_test_base extends uvm_test;
 
     env_cfg.init_cfg(UVM_ACTIVE);
 
+    env_cfg.has_coverage = 1; 
     env_cfg.has_scoreboard = 1; 
     env.env_cfg = env_cfg;
   endfunction : build_phase

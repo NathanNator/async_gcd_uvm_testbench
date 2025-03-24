@@ -8,6 +8,7 @@ package gcd_env_pkg;
 
   `include "gcd_env_cfg.svh"
   `include "gcd_predictor.svh"
+  `include "gcd_coverage_collector.svh"
   `include "gcd_sb.svh"
   `include "gcd_env.svh"
 
