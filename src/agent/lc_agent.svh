@@ -16,12 +16,12 @@ class lc_agent #(int D_WIDTH=32) extends uvm_agent;
 
   uvm_analysis_port #(lc_sequence_item #(D_WIDTH)) ap; 
 
-	// constructor
+  // constructor
   function new (string name = "lc_tx_agent", uvm_component parent = null);
     super.new (name, parent);
   endfunction: new
 
-	// build_phase
+  // build_phase
   virtual function void build_phase(uvm_phase phase);
     super.build_phase(phase);
 
@@ -43,7 +43,7 @@ class lc_agent #(int D_WIDTH=32) extends uvm_agent;
 
   endfunction: build_phase
 
-	// connect_phase
+  // connect_phase
   virtual function void connect_phase(uvm_phase phase);
 
     if(cfg.active == UVM_ACTIVE) begin

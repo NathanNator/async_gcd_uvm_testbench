@@ -17,7 +17,7 @@ class lc_driver #(parameter D_WIDTH=32) extends uvm_driver #(lc_sequence_item #(
     super.new(name, parent);
   endfunction: new
 
-	// build_phase
+  // build_phase
   virtual function void build_phase(uvm_phase phase);
     super.build_phase(phase);
 

@@ -27,7 +27,7 @@ class gcd_sb extends uvm_scoreboard;
 
   // run_phase
   virtual task run_phase (uvm_phase phase);
-		super.run_phase (phase);
+    super.run_phase (phase);
     
     fork 
       process_outputs();

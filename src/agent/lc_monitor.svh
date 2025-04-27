@@ -13,12 +13,12 @@ class lc_monitor #(int D_WIDTH=32) extends uvm_monitor;
 
   uvm_analysis_port #(lc_sequence_item_t) mon_analysis_port;
 
-	// constructor
+  // constructor
   function new (string name, uvm_component parent);
     super.new(name, parent);
   endfunction: new
 
-	// build_phase
+  // build_phase
   virtual function void build_phase(uvm_phase phase);
     super.build_phase(phase);
 

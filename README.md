@@ -1,4 +1,4 @@
-# Asynchronous GCD UVM Environment
+# Asynchronous GCD UVM Testbench
 
 ## Introduction
 
